@@ -97,7 +97,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'http://belajar.sinaukode.my.id'
+    baseURL: 'https://belajar.sinaukode.my.id'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
