@@ -4,31 +4,31 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _1b515980 = () => interopDefault(import('..\\pages\\login\\index.vue' /* webpackChunkName: "pages/login/index" */))
-const _18fb666a = () => interopDefault(import('..\\pages\\post\\index.vue' /* webpackChunkName: "pages/post/index" */))
-const _1680ee83 = () => interopDefault(import('..\\pages\\search\\index.vue' /* webpackChunkName: "pages/search/index" */))
-const _66062a9c = () => interopDefault(import('..\\pages\\admin\\category\\index.vue' /* webpackChunkName: "pages/admin/category/index" */))
-const _308b9a66 = () => interopDefault(import('..\\pages\\admin\\dashboard\\index.vue' /* webpackChunkName: "pages/admin/dashboard/index" */))
-const _324db39b = () => interopDefault(import('..\\pages\\admin\\menu\\index.vue' /* webpackChunkName: "pages/admin/menu/index" */))
-const _9931648c = () => interopDefault(import('..\\pages\\admin\\post\\index.vue' /* webpackChunkName: "pages/admin/post/index" */))
-const _3ad74ed9 = () => interopDefault(import('..\\pages\\admin\\slider\\index.vue' /* webpackChunkName: "pages/admin/slider/index" */))
-const _f0ee9cc0 = () => interopDefault(import('..\\pages\\admin\\tag\\index.vue' /* webpackChunkName: "pages/admin/tag/index" */))
-const _3ccc3ca2 = () => interopDefault(import('..\\pages\\admin\\user\\index.vue' /* webpackChunkName: "pages/admin/user/index" */))
-const _4c25e6a0 = () => interopDefault(import('..\\pages\\admin\\category\\create\\index.vue' /* webpackChunkName: "pages/admin/category/create/index" */))
-const _26dffec2 = () => interopDefault(import('..\\pages\\admin\\menu\\create\\index.vue' /* webpackChunkName: "pages/admin/menu/create/index" */))
-const _63b90bbe = () => interopDefault(import('..\\pages\\admin\\post\\create\\index.vue' /* webpackChunkName: "pages/admin/post/create/index" */))
-const _983d0446 = () => interopDefault(import('..\\pages\\admin\\slider\\create\\index.vue' /* webpackChunkName: "pages/admin/slider/create/index" */))
-const _334329a4 = () => interopDefault(import('..\\pages\\admin\\tag\\create\\index.vue' /* webpackChunkName: "pages/admin/tag/create/index" */))
-const _7126dab3 = () => interopDefault(import('..\\pages\\admin\\user\\create\\index.vue' /* webpackChunkName: "pages/admin/user/create/index" */))
-const _e6cc4caa = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
-const _1b19183a = () => interopDefault(import('..\\pages\\admin\\category\\edit\\_id.vue' /* webpackChunkName: "pages/admin/category/edit/_id" */))
-const _1333ec8e = () => interopDefault(import('..\\pages\\admin\\menu\\edit\\_id.vue' /* webpackChunkName: "pages/admin/menu/edit/_id" */))
-const _82510750 = () => interopDefault(import('..\\pages\\admin\\post\\edit\\_id.vue' /* webpackChunkName: "pages/admin/post/edit/_id" */))
-const _1a387d3e = () => interopDefault(import('..\\pages\\admin\\tag\\edit\\_id.vue' /* webpackChunkName: "pages/admin/tag/edit/_id" */))
-const _adf5e466 = () => interopDefault(import('..\\pages\\admin\\user\\edit\\_id.vue' /* webpackChunkName: "pages/admin/user/edit/_id" */))
-const _11c297e5 = () => interopDefault(import('..\\pages\\category\\_slug.vue' /* webpackChunkName: "pages/category/_slug" */))
-const _1c68a8fa = () => interopDefault(import('..\\pages\\post\\_slug.vue' /* webpackChunkName: "pages/post/_slug" */))
-const _03c26b27 = () => interopDefault(import('..\\pages\\tag\\_slug.vue' /* webpackChunkName: "pages/tag/_slug" */))
+const _0ae30c48 = () => interopDefault(import('../pages/login/index.vue' /* webpackChunkName: "pages/login/index" */))
+const _03023b92 = () => interopDefault(import('../pages/post/index.vue' /* webpackChunkName: "pages/post/index" */))
+const _630d563f = () => interopDefault(import('../pages/search/index.vue' /* webpackChunkName: "pages/search/index" */))
+const _3f19f4d5 = () => interopDefault(import('../pages/admin/category/index.vue' /* webpackChunkName: "pages/admin/category/index" */))
+const _4acd79f3 = () => interopDefault(import('../pages/admin/dashboard/index.vue' /* webpackChunkName: "pages/admin/dashboard/index" */))
+const _cf1ef414 = () => interopDefault(import('../pages/admin/menu/index.vue' /* webpackChunkName: "pages/admin/menu/index" */))
+const _20bbabf7 = () => interopDefault(import('../pages/admin/post/index.vue' /* webpackChunkName: "pages/admin/post/index" */))
+const _4254cff8 = () => interopDefault(import('../pages/admin/slider/index.vue' /* webpackChunkName: "pages/admin/slider/index" */))
+const _9adcfb0e = () => interopDefault(import('../pages/admin/tag/index.vue' /* webpackChunkName: "pages/admin/tag/index" */))
+const _a2c7753c = () => interopDefault(import('../pages/admin/user/index.vue' /* webpackChunkName: "pages/admin/user/index" */))
+const _7731a768 = () => interopDefault(import('../pages/admin/category/create/index.vue' /* webpackChunkName: "pages/admin/category/create/index" */))
+const _4cc2440b = () => interopDefault(import('../pages/admin/menu/create/index.vue' /* webpackChunkName: "pages/admin/menu/create/index" */))
+const _82bcea2c = () => interopDefault(import('../pages/admin/post/create/index.vue' /* webpackChunkName: "pages/admin/post/create/index" */))
+const _611913c9 = () => interopDefault(import('../pages/admin/slider/create/index.vue' /* webpackChunkName: "pages/admin/slider/create/index" */))
+const _5f07be28 = () => interopDefault(import('../pages/admin/tag/create/index.vue' /* webpackChunkName: "pages/admin/tag/create/index" */))
+const _589ed9c2 = () => interopDefault(import('../pages/admin/user/create/index.vue' /* webpackChunkName: "pages/admin/user/create/index" */))
+const _4b23da6e = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _1cf44a02 = () => interopDefault(import('../pages/admin/category/edit/_id.vue' /* webpackChunkName: "pages/admin/category/edit/_id" */))
+const _7dd71941 = () => interopDefault(import('../pages/admin/menu/edit/_id.vue' /* webpackChunkName: "pages/admin/menu/edit/_id" */))
+const _1ef2a7a0 = () => interopDefault(import('../pages/admin/post/edit/_id.vue' /* webpackChunkName: "pages/admin/post/edit/_id" */))
+const _228029de = () => interopDefault(import('../pages/admin/tag/edit/_id.vue' /* webpackChunkName: "pages/admin/tag/edit/_id" */))
+const _ea5fdb56 = () => interopDefault(import('../pages/admin/user/edit/_id.vue' /* webpackChunkName: "pages/admin/user/edit/_id" */))
+const _7e2169cd = () => interopDefault(import('../pages/category/_slug.vue' /* webpackChunkName: "pages/category/_slug" */))
+const _066f7e22 = () => interopDefault(import('../pages/post/_slug.vue' /* webpackChunkName: "pages/post/_slug" */))
+const _e2903a1e = () => interopDefault(import('../pages/tag/_slug.vue' /* webpackChunkName: "pages/tag/_slug" */))
 
 const emptyFn = () => {}
 
@@ -43,103 +43,103 @@ export const routerOptions = {
 
   routes: [{
     path: "/login",
-    component: _1b515980,
+    component: _0ae30c48,
     name: "login"
   }, {
     path: "/post",
-    component: _18fb666a,
+    component: _03023b92,
     name: "post"
   }, {
     path: "/search",
-    component: _1680ee83,
+    component: _630d563f,
     name: "search"
   }, {
     path: "/admin/category",
-    component: _66062a9c,
+    component: _3f19f4d5,
     name: "admin-category"
   }, {
     path: "/admin/dashboard",
-    component: _308b9a66,
+    component: _4acd79f3,
     name: "admin-dashboard"
   }, {
     path: "/admin/menu",
-    component: _324db39b,
+    component: _cf1ef414,
     name: "admin-menu"
   }, {
     path: "/admin/post",
-    component: _9931648c,
+    component: _20bbabf7,
     name: "admin-post"
   }, {
     path: "/admin/slider",
-    component: _3ad74ed9,
+    component: _4254cff8,
     name: "admin-slider"
   }, {
     path: "/admin/tag",
-    component: _f0ee9cc0,
+    component: _9adcfb0e,
     name: "admin-tag"
   }, {
     path: "/admin/user",
-    component: _3ccc3ca2,
+    component: _a2c7753c,
     name: "admin-user"
   }, {
     path: "/admin/category/create",
-    component: _4c25e6a0,
+    component: _7731a768,
     name: "admin-category-create"
   }, {
     path: "/admin/menu/create",
-    component: _26dffec2,
+    component: _4cc2440b,
     name: "admin-menu-create"
   }, {
     path: "/admin/post/create",
-    component: _63b90bbe,
+    component: _82bcea2c,
     name: "admin-post-create"
   }, {
     path: "/admin/slider/create",
-    component: _983d0446,
+    component: _611913c9,
     name: "admin-slider-create"
   }, {
     path: "/admin/tag/create",
-    component: _334329a4,
+    component: _5f07be28,
     name: "admin-tag-create"
   }, {
     path: "/admin/user/create",
-    component: _7126dab3,
+    component: _589ed9c2,
     name: "admin-user-create"
   }, {
     path: "/",
-    component: _e6cc4caa,
+    component: _4b23da6e,
     name: "index"
   }, {
     path: "/admin/category/edit/:id?",
-    component: _1b19183a,
+    component: _1cf44a02,
     name: "admin-category-edit-id"
   }, {
     path: "/admin/menu/edit/:id?",
-    component: _1333ec8e,
+    component: _7dd71941,
     name: "admin-menu-edit-id"
   }, {
     path: "/admin/post/edit/:id?",
-    component: _82510750,
+    component: _1ef2a7a0,
     name: "admin-post-edit-id"
   }, {
     path: "/admin/tag/edit/:id?",
-    component: _1a387d3e,
+    component: _228029de,
     name: "admin-tag-edit-id"
   }, {
     path: "/admin/user/edit/:id?",
-    component: _adf5e466,
+    component: _ea5fdb56,
     name: "admin-user-edit-id"
   }, {
     path: "/category/:slug?",
-    component: _11c297e5,
+    component: _7e2169cd,
     name: "category-slug"
   }, {
     path: "/post/:slug",
-    component: _1c68a8fa,
+    component: _066f7e22,
     name: "post-slug"
   }, {
     path: "/tag/:slug?",
-    component: _03c26b27,
+    component: _e2903a1e,
     name: "tag-slug"
   }],
 

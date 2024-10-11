@@ -4,23 +4,22 @@ import { decode, parsePath, withoutBase, withoutTrailingSlash, normalizeURL } fr
 import { getMatchedComponentsInstances, getChildrenComponentInstancesUsingFetch, promisify, globalHandleError, urlJoin, sanitizeComponent } from './utils'
 import NuxtError from './components/nuxt-error.vue'
 import NuxtLoading from './components/nuxt-loading.vue'
-import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
-import '..\\node_modules\\bootstrap\\dist\\css\\bootstrap.css'
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
-import '..\\node_modules\\bootstrap-vue\\dist\\bootstrap-vue.css'
+import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css'
 
-import '..\\assets\\css\\fontawesome-free\\css\\all.min.css'
+import '../assets/css/fontawesome-free/css/all.min.css'
 
-import '..\\assets\\css\\adminlte.min.css'
+import '../assets/css/adminlte.min.css'
 
-import '..\\assets\\css\\custom.css'
+import '../assets/css/custom.css'
 
-import '..\\node_modules\\vue-multiselect\\dist\\vue-multiselect.min.css'
+import '../node_modules/vue-multiselect/dist/vue-multiselect.min.css'
 
-import _77068119 from '..\\layouts\\admin.vue'
-import _2d217e9e from '..\\layouts\\auth.vue'
-import _6f6c098b from '..\\layouts\\default.vue'
+import _77068119 from '../layouts/admin.vue'
+import _2d217e9e from '../layouts/auth.vue'
+import _6f6c098b from '../layouts/default.vue'
 
 const layouts = { "_admin": sanitizeComponent(_77068119),"_auth": sanitizeComponent(_2d217e9e),"_default": sanitizeComponent(_6f6c098b) }
 
@@ -57,7 +56,7 @@ export default {
       }
     }, [
       loadingEl,
-      h(NuxtBuildIndicator),
+
       transitionEl
     ])
   },
@@ -199,10 +198,6 @@ export default {
     },
 
     setLayout (layout) {
-      if(layout && typeof layout !== 'string') {
-        throw new Error('[nuxt] Avoid using non-string value as layout property.')
-      }
-
       if (!layout || !layouts['_' + layout]) {
         layout = 'default'
       }
