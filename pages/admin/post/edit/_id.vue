@@ -200,7 +200,7 @@ export default {
 
     //fetching data categories
     this.$axios
-      .get("/api/web/categories")
+      .get("/api/admin/allCategory")
 
       .then((response) => {
         //assing response data to state "categories"
@@ -209,11 +209,11 @@ export default {
 
     //fetching data tags
     this.$axios
-      .get("/api/web/tags")
+      .get("/api/admin/allTag")
 
       .then((response) => {
         //assing response data to state "tags"
-        this.tags = response.data.data;
+        this.tags = response.data.data.data;
       });
   },
 
