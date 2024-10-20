@@ -25,7 +25,7 @@
 
 footer {
   background-color: var(--primary) !important;
-  color: var(--light) !important;
+  color: white !important;
 }
 
 .navbar {
@@ -36,16 +36,14 @@ body {
   background-color: var(--background-color) !important;
 }
 
-/* Menimpa warna background jumbotron AdminLTE */
 .jumbotron, .b-jumbotron {
-  background-color: var(--primary) !important; /* Ubah warna background */
-  color: #ffffff !important; /* Pastikan teks tetap terlihat dengan warna putih */
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
 }
 
-/* Ubah warna teks di dalam jumbotron */
 .jumbotron h3, .b-jumbotron h3,
 .jumbotron p, .b-jumbotron p {
-  color: #ffffff !important; /* Pastikan warna teks putih */
+  color: #ffffff !important;
 }
 
 

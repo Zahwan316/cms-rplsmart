@@ -38,7 +38,7 @@
               @keypress.enter="searchData"
               size="sm"
               class="mr-sm-2 border-0"
-              placeholder="tulis kata kunci..."
+              placeholder="Tulis kata kunci..."
             >
             </b-form-input>
             <b-button

@@ -3,24 +3,49 @@
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        <a
+          class="nav-link text-white"
+          data-widget="pushmenu"
+          href="#"
+          role="button"
+          ><i class="fas fa-bars"></i
+        ></a>
       </li>
       <li class="nav-item">
-        <nuxt-link class="nav-link btn btn-sm btn-primary text-white" to="/" target="_blank">LIHAT WEBSITE <i class="fa fa-external-link-alt"></i></nuxt-link>
+        <nuxt-link
+          class="nav-link btn btn-sm btn-primary text-white"
+          to="/"
+          target="_blank"
+          >LIHAT WEBSITE <i class="fa fa-external-link-alt"></i
+        ></nuxt-link>
       </li>
     </ul>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown pb-2">
-        <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-          class="nav-link dropdown-toggle">
+        <a
+          id="dropdownSubMenu1"
+          href="#"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          class="nav-link dropdown-toggle text-white"
+        >
           <img
             :src="`https://ui-avatars.com/api/?name=${user.name}&amp;background=4e73df&amp;color=ffffff&amp;size=100`"
-            class="img-circle" style="opacity: .8" width="35" height="35">
+            class="img-circle"
+            style="opacity: 0.8"
+            width="35"
+            height="35"
+          />
           {{ user.name }}
         </a>
-        <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu" style="left: 0px; right: inherit;">
+        <ul
+          aria-labelledby="dropdownSubMenu1"
+          class="dropdown-menu"
+          style="left: 0px; right: inherit"
+        >
           <li><a @click="logout" class="dropdown-item">Logout</a></li>
         </ul>
       </li>
@@ -29,32 +54,33 @@
 </template>
 
 <script>
-  export default {
-
-    computed: {
-      user() {
-        return this.$auth.user
-      }
+export default {
+  computed: {
+    user() {
+      return this.$auth.user;
     },
+  },
 
-    methods: {
+  methods: {
+    async logout() {
+      //logout auth
+      await this.$auth.logout();
 
-      async logout() {
-
-        //logout auth
-        await this.$auth.logout()
-
-        //redirect route login
-        this.$router.push({
-          name: 'login'
-        })
-
-      }
-
-    }
-  }
+      //redirect route login
+      this.$router.push({
+        name: "login",
+      });
+    },
+  },
+};
 </script>
 
 <style>
+.nav-link i.fas.fa-bars {
+  color: white;
+}
 
+.nav-link.dropdown-toggle.text-white {
+  color: white !important;
+}
 </style>
