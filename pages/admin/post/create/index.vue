@@ -184,20 +184,22 @@ export default {
   mounted() {
     //fetching data categories
     this.$axios
-      .get("/api/admin/categories")
+      .get("/api/web/categories")
 
       .then((response) => {
         //assing response data to state "categories"
+
         this.categories = response.data.data.data;
       });
 
     //fetching data tags
     this.$axios
-      .get("/api/admin/tags")
+      .get("/api/web/tags")
 
       .then((response) => {
         //assing response data to state "tags"
-        this.tags = response.data.data.data;
+        console.log(response)
+        this.tags = response.data.data;
       });
   },
 
