@@ -8,17 +8,17 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nuxt-cms',
+    title: 'RPLSmart - Belajar Koding Bahasa Indonesia Terlengkap',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: 'Situs belajar koding dari RPL SMKN 1 Banjar' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }, // pastikan favicon.ico ada di folder /static/
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap' }
     ],
     script: [
@@ -32,6 +32,7 @@ export default {
   css: [
     '@/assets/css/fontawesome-free/css/all.min.css',
     '@/assets/css/adminlte.min.css',
+    '@/assets/css/custom.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -97,7 +98,8 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'https://belajar.sinaukode.my.id'
+    baseURL: 'https://cms-api.sinaukode.my.id'
+
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

@@ -138,7 +138,7 @@ export default {
   head() {
     return {
       title:
-        "Tambah Post - SantriKoding.com - Belajar Koding Bahasa Indonesia Terlengkap"
+        "Tambah Post - RPLSmart - Belajar Koding Bahasa Indonesia Terlengkap",
     };
   },
 
@@ -147,7 +147,7 @@ export default {
       if (process.client) {
         return import("@blowstack/ckeditor-nuxt");
       }
-    }
+    },
   },
 
   data() {
@@ -159,7 +159,7 @@ export default {
         category_id: "",
         content: "",
         description: "",
-        tags: []
+        tags: [],
       },
 
       //state categories
@@ -175,9 +175,9 @@ export default {
       editorConfig: {
         removePlugins: ["Title"],
         simpleUpload: {
-          uploadUrl: "https://belajar.sinaukode.my.id/api/web/posts/storeImage"
-        }
-      }
+          uploadUrl: "https://belajar.sinaukode.my.id/api/web/posts/storeImage",
+        },
+      },
     };
   },
 
@@ -186,7 +186,7 @@ export default {
     this.$axios
       .get("/api/admin/categories")
 
-      .then(response => {
+      .then((response) => {
         //assing response data to state "categories"
         this.categories = response.data.data.data;
       });
@@ -195,7 +195,7 @@ export default {
     this.$axios
       .get("/api/admin/tags")
 
-      .then(response => {
+      .then((response) => {
         //assing response data to state "tags"
         this.tags = response.data.data.data;
       });
@@ -219,7 +219,7 @@ export default {
           text: "Format File Tidak Didukung!",
           icon: "error",
           showConfirmButton: false,
-          timer: 2000
+          timer: 2000,
         });
       }
     },
@@ -231,7 +231,7 @@ export default {
       let tags = this.post.tags;
       let selectedTags = [];
 
-      tags.forEach(tag => {
+      tags.forEach((tag) => {
         selectedTags.push(tag.id);
       });
 
@@ -262,20 +262,20 @@ export default {
             text: "Data Berhasil Disimpan!",
             icon: "success",
             showConfirmButton: false,
-            timer: 2000
+            timer: 2000,
           });
 
           //redirect, if success store data
           this.$router.push({
-            name: "admin-post"
+            name: "admin-post",
           });
         })
-        .catch(error => {
+        .catch((error) => {
           //assign error to state "validation"
           this.validation = error.response.data;
         });
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -11,8 +11,13 @@
       <form @submit.prevent="login">
         <div class="form-group">
           <label class="font-weight-bold text-uppercase">Email address</label>
-          <input type="email" v-model="user.email" :class="{ 'is-invalid': validation.email }" class="form-control"
-            placeholder="Masukkan Alamat Email">
+          <input
+            type="email"
+            v-model="user.email"
+            :class="{ 'is-invalid': validation.email }"
+            class="form-control"
+            placeholder="Masukkan Alamat Email"
+          />
         </div>
         <div v-if="validation.email" class="mt-2">
           <b-alert show variant="danger">{{ validation.email[0] }}</b-alert>
@@ -20,8 +25,13 @@
 
         <div class="form-group">
           <label class="font-weight-bold text-uppercase">Password</label>
-          <input type="password" v-model="user.password" :class="{ 'is-invalid': validation.password }"
-            class="form-control" placeholder="Masukkan Password">
+          <input
+            type="password"
+            v-model="user.password"
+            :class="{ 'is-invalid': validation.password }"
+            class="form-control"
+            placeholder="Masukkan Password"
+          />
         </div>
         <div v-if="validation.password" class="mt-2">
           <b-alert show variant="danger">{{ validation.password[0] }}</b-alert>
@@ -35,60 +45,53 @@
 </template>
 
 <script>
-  export default {
+export default {
+  //layout
+  layout: "auth",
 
-    //layout
-    layout: 'auth',
+  //meta
+  head() {
+    return {
+      title: "Login - RPLSmart - Belajar Koding Bahasa Indonesia Terlengkap",
+    };
+  },
 
-    //meta
-    head() {
-      return {
-        title: 'Login - SantriKoding.com - Belajar Koding Bahasa Indonesia Terlengkap',
-      }
+  data() {
+    return {
+      //state user
+      user: {
+        email: "",
+        password: "",
+      },
+      //validation
+      validation: [],
+    };
+  },
+
+  methods: {
+    async login() {
+      await this.$auth
+        .loginWith("local", {
+          data: {
+            email: this.user.email,
+            password: this.user.password,
+          },
+        })
+
+        .then(() => {
+          //redirect
+          this.$router.push({
+            name: "admin-dashboard",
+          });
+        })
+
+        .catch((error) => {
+          //assign validation
+          this.validation = error.response.data;
+        });
     },
-
-    data() {
-      return {
-        //state user
-        user: {
-          email: '',
-          password: '',
-        },
-        //validation
-        validation: []
-      }
-    },
-
-    methods: {
-      async login() {
-
-        await this.$auth.loginWith('local', {
-            data: {
-              email: this.user.email,
-              password: this.user.password
-            }
-          })
-
-          .then(() => {
-
-            //redirect
-            this.$router.push({
-              name: 'admin-dashboard'
-            })
-
-          })
-
-          .catch(error => {
-            //assign validation
-            this.validation = error.response.data
-          })
-      }
-
-    }
-
-  }
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

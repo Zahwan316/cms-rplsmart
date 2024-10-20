@@ -12,12 +12,12 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_161dd4d8 from 'nuxt_plugin_plugin_161dd4d8' // Source: ./components/plugin.js (mode: 'all')
-import nuxt_plugin_bootstrapvue_f4b6da4e from 'nuxt_plugin_bootstrapvue_f4b6da4e' // Source: ./bootstrap-vue.js (mode: 'all')
-import nuxt_plugin_vuesweetalert2_ccfd587e from 'nuxt_plugin_vuesweetalert2_ccfd587e' // Source: ./vue-sweetalert2.js (mode: 'client')
-import nuxt_plugin_nuxtvuemultiselect_3bcc448a from 'nuxt_plugin_nuxtvuemultiselect_3bcc448a' // Source: ./nuxt-vue-multiselect.js (mode: 'all')
-import nuxt_plugin_axios_6977feaa from 'nuxt_plugin_axios_6977feaa' // Source: ./axios.js (mode: 'all')
-import nuxt_plugin_auth_727c2d46 from 'nuxt_plugin_auth_727c2d46' // Source: ./auth.js (mode: 'all')
+import nuxt_plugin_plugin_50b754b1 from 'nuxt_plugin_plugin_50b754b1' // Source: .\\components\\plugin.js (mode: 'all')
+import nuxt_plugin_bootstrapvue_afa256fa from 'nuxt_plugin_bootstrapvue_afa256fa' // Source: .\\bootstrap-vue.js (mode: 'all')
+import nuxt_plugin_vuesweetalert2_4281d2eb from 'nuxt_plugin_vuesweetalert2_4281d2eb' // Source: .\\vue-sweetalert2.js (mode: 'client')
+import nuxt_plugin_nuxtvuemultiselect_31eeafa0 from 'nuxt_plugin_nuxtvuemultiselect_31eeafa0' // Source: .\\nuxt-vue-multiselect.js (mode: 'all')
+import nuxt_plugin_axios_714b8a54 from 'nuxt_plugin_axios_714b8a54' // Source: .\\axios.js (mode: 'all')
+import nuxt_plugin_auth_64d8f748 from 'nuxt_plugin_auth_64d8f748' // Source: .\\auth.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -46,7 +46,7 @@ Vue.component(Nuxt.name, Nuxt)
 
 Object.defineProperty(Vue.prototype, '$nuxt', {
   get() {
-    const globalNuxt = this.$root.$options.$nuxt
+    const globalNuxt = this.$root ? this.$root.$options.$nuxt : null
     if (process.client && !globalNuxt && typeof window !== 'undefined') {
       return window.$nuxt
     }
@@ -60,14 +60,15 @@ Vue.use(Meta, {"keyName":"head","attribute":"data-n-head","ssrAttribute":"data-n
 const defaultTransition = {"name":"page","mode":"out-in","appear":false,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}
 
 async function createApp(ssrContext, config = {}) {
-  const router = await createRouter(ssrContext, config)
+  const store = null
+  const router = await createRouter(ssrContext, config, { store })
 
   // Create Root instance
 
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"nuxt-cms","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Quicksand:wght@300;400;500;600;700&display=swap"}],"script":[{"src":"\u002Fjs\u002Fjquery\u002Fjquery.min.js"},{"src":"\u002Fjs\u002Fbootstrap\u002Fjs\u002Fbootstrap.bundle.min.js"},{"src":"\u002Fjs\u002Fadminlte.min.js"}],"style":[]},
+    head: {"title":"RPLSmart - Belajar Koding Bahasa Indonesia Terlengkap","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Situs belajar koding dari RPL SMKN 1 Banjar"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Quicksand:wght@300;400;500;600;700&display=swap"}],"script":[{"src":"\u002Fjs\u002Fjquery\u002Fjquery.min.js"},{"src":"\u002Fjs\u002Fbootstrap\u002Fjs\u002Fbootstrap.bundle.min.js"},{"src":"\u002Fjs\u002Fadminlte.min.js"}],"style":[]},
 
     router,
     nuxt: {
@@ -92,6 +93,7 @@ async function createApp(ssrContext, config = {}) {
       },
 
       err: null,
+      errPageReady: false,
       dateErr: null,
       error (err) {
         err = err || null
@@ -103,6 +105,7 @@ async function createApp(ssrContext, config = {}) {
         }
         nuxt.dateErr = Date.now()
         nuxt.err = err
+        nuxt.errPageReady = false
         // Used in src/server.js
         if (ssrContext) {
           ssrContext.nuxt.error = err
@@ -132,6 +135,7 @@ async function createApp(ssrContext, config = {}) {
     req: ssrContext ? ssrContext.req : undefined,
     res: ssrContext ? ssrContext.res : undefined,
     beforeRenderFns: ssrContext ? ssrContext.beforeRenderFns : undefined,
+    beforeSerializeFns: ssrContext ? ssrContext.beforeSerializeFns : undefined,
     ssrContext
   })
 
@@ -181,28 +185,28 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_161dd4d8 === 'function') {
-    await nuxt_plugin_plugin_161dd4d8(app.context, inject)
+  if (typeof nuxt_plugin_plugin_50b754b1 === 'function') {
+    await nuxt_plugin_plugin_50b754b1(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_bootstrapvue_f4b6da4e === 'function') {
-    await nuxt_plugin_bootstrapvue_f4b6da4e(app.context, inject)
+  if (typeof nuxt_plugin_bootstrapvue_afa256fa === 'function') {
+    await nuxt_plugin_bootstrapvue_afa256fa(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_vuesweetalert2_ccfd587e === 'function') {
-    await nuxt_plugin_vuesweetalert2_ccfd587e(app.context, inject)
+  if (process.client && typeof nuxt_plugin_vuesweetalert2_4281d2eb === 'function') {
+    await nuxt_plugin_vuesweetalert2_4281d2eb(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_nuxtvuemultiselect_3bcc448a === 'function') {
-    await nuxt_plugin_nuxtvuemultiselect_3bcc448a(app.context, inject)
+  if (typeof nuxt_plugin_nuxtvuemultiselect_31eeafa0 === 'function') {
+    await nuxt_plugin_nuxtvuemultiselect_31eeafa0(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_6977feaa === 'function') {
-    await nuxt_plugin_axios_6977feaa(app.context, inject)
+  if (typeof nuxt_plugin_axios_714b8a54 === 'function') {
+    await nuxt_plugin_axios_714b8a54(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_auth_727c2d46 === 'function') {
-    await nuxt_plugin_auth_727c2d46(app.context, inject)
+  if (typeof nuxt_plugin_auth_64d8f748 === 'function') {
+    await nuxt_plugin_auth_64d8f748(app.context, inject)
   }
 
   // Lock enablePreview in context
@@ -214,6 +218,13 @@ async function createApp(ssrContext, config = {}) {
 
   // Wait for async component to be resolved first
   await new Promise((resolve, reject) => {
+    // Ignore 404s rather than blindly replacing URL in browser
+    if (process.client) {
+      const { route } = router.resolve(app.context.route.fullPath)
+      if (!route.matched.length) {
+        return resolve()
+      }
+    }
     router.replace(app.context.route.fullPath, resolve, (err) => {
       // https://github.com/vuejs/vue-router/blob/v3.4.3/src/util/errors.js
       if (!err._isRouter) return reject(err)

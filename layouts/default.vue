@@ -8,72 +8,71 @@
 
     <!-- footer -->
     <Footer />
-
   </div>
 </template>
 <script>
-  import Navbar from '@/components/web/navbar.vue'
-  import Footer from '@/components/web/footer.vue'
-  export default {
-    components: {
-      Navbar,
-      Footer
-    },
-  }
+import Navbar from "@/components/web/navbar.vue";
+import Footer from "@/components/web/footer.vue";
+export default {
+  components: {
+    Navbar,
+    Footer,
+  },
+};
 </script>
 
 <style>
-  body {
-    background-color: #ccdcec !important;
-  }
+body {
+  background-color: #fffcf2 !important;
+}
 
-  .jumbotron {
-    background: #186399 !important;
-    color: white;
-  }
+.jumbotron {
+  background: #bd562d !important;
+  color: white;
+}
 
-  .bg-navbar {
-    background: #12466B;
-  }
+.bg-navbar {
+  background: #252422; /* Warna navbar menjadi dark */
+}
 
-  .btn-primary {
-    background-color: #1c669b;
-    border-color: #1c669b;
-  }
+.btn-primary {
+  background-color: #403d39; /* Gray dark */
+  border-color: #403d39;
+}
 
-  .btn-primary:hover {
-    background-color: #1c669b;
-    border-color: #1c669b;
-  }
+.btn-primary:hover {
+  background-color: #403d39;
+  border-color: #403d39;
+}
 
-  .btn-primary-dark {
-    background-color: #0f456b;
-    border-color: #0f456b;
-    color: white;
-  }
+.btn-primary-dark {
+  background-color: #252422;
+  border-color: #252422;
+  color: white;
+}
 
-  .btn-primary-dark:hover {
-    color: white;
-  }
+.btn-primary-dark:hover {
+  color: white;
+}
 
-  .carousel-item .img-fluid {
-    border-radius: .5rem;
-  }
+.card-category {
+  background-color: #ccc5b9;
+}
 
-  .card-category {
-    background-color: #dadada;
-  }
+.carousel-item .img-fluid {
+  border-radius: 0.5rem;
+}
 
-  .object-fit-cover {
-    object-fit: cover;
-  }
+.object-fit-cover {
+  object-fit: cover;
+}
 
-  .footer-top {
-    background-color: #186399;
-    color: white;
-  }
+.footer-top {
+  background-color: #403d39;
+  color: white;
+}
 
-  .footer-bottom {
-    background-color: #12466B;
-  }
+.footer-bottom {
+  background-color: #252422;
+}
 </style>
